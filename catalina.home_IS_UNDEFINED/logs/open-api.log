@@ -1,0 +1,12 @@
+2023-02-16 11:35:54,013 INFO  Starting DemoApplication using Java 17.0.5 with PID 28768 (C:\Users\QuincyMafake\IdeaProjects\Z_Sandbox\demo\target\classes started by QuincyMafake in C:\Users\QuincyMafake\IdeaProjects\Z_Sandbox\demo)
+2023-02-16 11:35:54,015 INFO  No active profile set, falling back to 1 default profile: "default"
+2023-02-16 11:35:54,599 INFO  Tomcat initialized with port(s): 9090 (http)
+2023-02-16 11:35:54,605 INFO  Initializing ProtocolHandler ["http-nio-9090"]
+2023-02-16 11:35:54,606 INFO  Starting service [Tomcat]
+2023-02-16 11:35:54,606 INFO  Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-16 11:35:54,664 INFO  Initializing Spring embedded WebApplicationContext
+2023-02-16 11:35:54,664 INFO  Root WebApplicationContext: initialization completed in 616 ms
+2023-02-16 11:35:54,872 INFO  Starting ProtocolHandler ["http-nio-9090"]
+2023-02-16 11:35:54,888 INFO  Tomcat started on port(s): 9090 (http) with context path ''
+2023-02-16 11:35:54,894 INFO  Started DemoApplication in 1.174 seconds (process running for 1.735)
+2023-02-16 11:35:54,895 INFO  Hello World from Application Runner
