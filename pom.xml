@@ -19,6 +19,7 @@
 		<java.version>17</java.version>
 		<jcloverslf4j.version>2.0.3</jcloverslf4j.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -31,12 +32,6 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-configuration-processor</artifactId>-->
-<!--			<version>3.0.2</version>-->
-<!--		</dependency>-->
-
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
@@ -44,7 +39,12 @@
 			<scope>test</scope>
 		</dependency>
 
-
+		<dependency>
+			<groupId>org.springframework.web</groupId>
+			<artifactId>servlet</artifactId>
+			<version>3.1.2</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

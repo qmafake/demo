@@ -3,6 +3,7 @@ package com.tutorialspoint.demo.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tutorialspoint.demo.exception.ProductNotfoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -42,6 +43,11 @@ public class ProductServiceController {
 
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
+
+		if (! productRepo.containsKey(id)) {
+			throw new ProductNotfoundException();
+		}
+
 		productRepo.remove(id);
 		product.setId(id);
 		productRepo.put(id, product);

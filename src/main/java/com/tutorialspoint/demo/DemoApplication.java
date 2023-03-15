@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
-
 	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	public static void main(String[] args) {
@@ -28,15 +27,10 @@ public class DemoApplication implements CommandLineRunner {
 	@Value("${spring.application.name}")
 	private String name;
 
-	@RequestMapping(value = "/index")
-	public String name() {
-		return name;
-	}
-
 	@Override
 	public void run(String... args) throws Exception {
 
-		logger.info("Hello World from Application Runner");
+		logger.info("Hello World from Application Runner. Application Name is {}", name);
 		logger.warn("A WARN -> Hello World from Application Runner");
 		logger.error("An ERROR -> Hello World from Application Runner");
 		logger.debug("A DEBUG -> Hello World from Application Runner");
