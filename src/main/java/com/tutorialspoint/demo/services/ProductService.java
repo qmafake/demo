@@ -1,4 +1,4 @@
-package com.tutorialspoint.services;
+package com.tutorialspoint.demo.services;
 
 import java.util.Collection;
 import com.tutorialspoint.demo.model.Product;

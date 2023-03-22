@@ -1,8 +1,12 @@
-package com.tutorialspoint.services;
+package com.tutorialspoint.demo.services;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.tutorialspoint.demo.exception.ProductNotfoundException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.tutorialspoint.demo.model.Product;
 
@@ -26,14 +30,23 @@ public class ProductServiceImpl implements ProductService {
    }
    @Override
    public void updateProduct(String id, Product product) {
+
+      if (! productRepo.containsKey(id)) {
+         throw new ProductNotfoundException();
+      }
+
       productRepo.remove(id);
       product.setId(id);
       productRepo.put(id, product);
    }
    @Override
    public void deleteProduct(String id) {
-      productRepo.remove(id);
 
+      if (! productRepo.containsKey(id)) {
+         throw new ProductNotfoundException();
+      }
+
+      productRepo.remove(id);
    }
    @Override
    public Collection<Product> getProducts() {
