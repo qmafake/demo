@@ -9,9 +9,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
+@EnableScheduling
 public class DemoApplication implements CommandLineRunner {
 	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -21,7 +23,6 @@ public class DemoApplication implements CommandLineRunner {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(DemoApplicationContextConfig.class);
 
 		Object str = ctx.getBean("Users");
-
 	}
 
 	@Value("${spring.application.name}")

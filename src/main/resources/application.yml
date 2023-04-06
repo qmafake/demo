@@ -1,5 +1,14 @@
 spring:
   application:
     name: demoservice
+
 server:
   port: 9090
+
+#server:
+#  port: 443
+#  ssl:
+#    key-store: C:/TEMP/demo/SSL/keystore.p12
+#    key-store-password: changeit
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
