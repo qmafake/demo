@@ -10,10 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.web.bind.annotation.RequestMapping;
+//import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableScheduling
+//@EnableSwagger2
 public class DemoApplication implements CommandLineRunner {
 	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -42,4 +43,12 @@ public class DemoApplication implements CommandLineRunner {
 
 		logger.info("Got a bean: " + str.toString());
 	}
+
+//	@Bean
+//	public Docket configureApi(){
+//		return new Docket(DocumentationType.SWAGGER_2).select()
+//				.apis(RequestHandlerSelectors.basePackage("com.tutorialspoint.demo")).build();
+//
+//	}
+
 }

@@ -1,6 +1,11 @@
 package com.tutorialspoint.demo.controller;
 
+import com.tutorialspoint.demo.model.Product;
 import com.tutorialspoint.demo.services.ProductService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +39,19 @@ public class ProductServiceController {
       productService.deleteProduct(id);
       return new ResponseEntity<>("Product is deleted successsfully", HttpStatus.OK);
    }
+
+
+   @Operation(
+           summary = "Gets the consumer information for the specified international meter.")
+   @ApiResponses(value = {
+           @ApiResponse(
+                   responseCode = "200", description = "Successfully purchased a 1 FOR U token",
+                   content = { @Content(
+                           mediaType = "application/json"
+//                           ,schema = @Schema(implementation = ObTransactionResponse.class)
+                   )
+                   }),
+   })
    @RequestMapping(value = "/products", method = RequestMethod.POST)
    public ResponseEntity<Object> createProduct(@RequestBody Product product) {
       productService.createProduct(product);
